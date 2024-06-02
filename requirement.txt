@@ -1,0 +1,9 @@
+argparse
+time
+os
+colorama
+pyfiglet
+requests
+fpdf
+paramiko
+pdfrw
