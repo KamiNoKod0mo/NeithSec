@@ -138,7 +138,7 @@ try:
     os.system('clear')
     save_json(None,'hash.json')
     while True:
-        arquivo=(connect('127.0.0.1','22','carlos_','3003Oliveira@'))
+        arquivo=(connect('127.0.0.1','22','carlos_','pass'))
 
         new_file = []
         new_files = []
