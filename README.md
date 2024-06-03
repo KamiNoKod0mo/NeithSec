@@ -13,28 +13,25 @@ Essa ferramenta Realiza as seguintes ações
 
 - [Instalação](#instalação)
 - [Uso](#uso)
-- [Contribuição](#contribuição)
-- [Licença](#licença)
 
 ## Instalação
 1. Clone o repositório: `git clone https://github.com/KamiNoKod0mo/Seith.git`
 2. Instale as dependências:
-   ```bash
-   cd Seith
-   chmod +x setup_install.sh
-   ./setup_install.sh
-   ```
+```bash
+cd Seith
+chmod +x setup_install.sh
+./setup_install.sh
+```
 ## Uso
 ```bash
 chmod +x start.sh
 ./start.sh ip
 ```
+![Screenshot from 2024-06-02 21-14-40](https://github.com/KamiNoKod0mo/Seith/assets/149252909/481d9ad3-3cdb-42da-b2eb-940c395f7ddc)
 
+## Gerando esse pdf
 
-
-
-
-
+![Screenshot from 2024-06-02 21-15-12](https://github.com/KamiNoKod0mo/Seith/assets/149252909/8ccd3424-6ae4-41b6-99ab-f22910fecea0)
 
 
 
