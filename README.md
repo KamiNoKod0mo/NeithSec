@@ -1,6 +1,6 @@
-## Seith Project
+## Neith Project
 
-Finalizado o prototipo V1 do projeto de pesquisa seith.
+Finalizado o prototipo V1 do projeto de pesquisa neith.
 Essa ferramenta Realiza as seguintes ações
 
 - Realiza uma varredura intervalada no servidor alvo
