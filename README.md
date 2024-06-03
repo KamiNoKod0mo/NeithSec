@@ -15,10 +15,10 @@ Essa ferramenta Realiza as seguintes ações
 - [Uso](#uso)
 
 ## Instalação
-1. Clone o repositório: `git clone https://github.com/KamiNoKod0mo/Seith.git`
+1. Clone o repositório: `git clone https://github.com/KamiNoKod0mo/Neith.git`
 2. Instale as dependências:
 ```bash
-cd Seith
+cd Neith
 chmod +x setup_install.sh
 ./setup_install.sh
 ```
