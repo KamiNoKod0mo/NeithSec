@@ -3,11 +3,11 @@
 Finalizado o prototipo V1 do projeto de pesquisa neith.
 Essa ferramenta Realiza as seguintes ações
 
-- Realiza uma varredura intervalada no servidor alvo
+- Realiza uma varredura intervalada no servidor alvo com Nmap
 - Monitoramento de exploit para os serviços instalados no servidor alvo
 - Monitoramento de arquivo em pasta selecionadas, com api do virustotal
 - Monitoramento das conexões do servidor alvo
-- Por meio da api do gemini gera um pdf de como eliminar as vulnerabilidades do servidor alvo
+- Por meio da api do gemini gera um pdf com sugestões de como eliminar as vulnerabilidades do servidor alvo
 
 ## Índice
 
