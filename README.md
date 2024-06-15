@@ -27,11 +27,11 @@ chmod +x setup_install.sh
 chmod +x start.sh
 ./start.sh ip
 ```
-![Screenshot from 2024-06-02 21-14-40](https://github.com/KamiNoKod0mo/Seith/assets/149252909/481d9ad3-3cdb-42da-b2eb-940c395f7ddc)
+![Screenshot from 2024-06-15 12-13-30](https://github.com/KamiNoKod0mo/NeithSec/assets/149252909/93f1ca93-3ee2-4b3c-b190-4affd04d6af1)
 
 ## Gerando o seguinte pdf
 
-![Screenshot from 2024-06-02 21-15-12](https://github.com/KamiNoKod0mo/Seith/assets/149252909/8ccd3424-6ae4-41b6-99ab-f22910fecea0)
+![Screenshot from 2024-06-15 12-15-22](https://github.com/KamiNoKod0mo/NeithSec/assets/149252909/55b4a01f-ad59-4322-ad20-59c539cb4db5)
 
 
 

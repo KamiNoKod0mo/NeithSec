@@ -169,7 +169,7 @@ try:
         
         #print(hashmd5)
         try:          
-            with open('hash.json', "r") as f:
+            with open('files_hash_virus.json', "r") as f:
                 # Carregando o conteúdo do arquivo JSON em um dicionário
                 dados = json.load(f)
                 #print(dados)

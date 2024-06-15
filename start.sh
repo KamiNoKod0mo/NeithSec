@@ -14,7 +14,7 @@ fi
     while [[ true ]]; do
         if [ -f "scan" ]; then
 
-        tmux send-keys -t Neith "python3 functions/index.py -s exploit-db -nf scan -l 2 -w ${1}_mOn" C-m
+        tmux send-keys -t Neith "python3 functions/index.py -s exploit-db -nf scan -l 1 -w ${1}_mOn" C-m
         #substituir scan por scan_final se o de cima for descomentado
 
         tmux split-window -h
@@ -23,7 +23,7 @@ fi
         tmux send-keys -t Neith 'python3 functions/monvirus.py' C-m
 
         tmux split-window -v
-        
+
         tmux send-keys -t Neith 'python3 functions/monconnections.py' C-m
 
         tmux attach -t Neith
