@@ -1,0 +1,10 @@
+argparse
+time
+os
+colorama
+pyfiglet
+requests
+fpdf
+paramiko
+PyPDF2
+python-dotenv
