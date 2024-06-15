@@ -6,19 +6,19 @@ fi
     #./scan.sh $1 &
 
     #tmux kill-session
-    tmux new -s Seith -d
+    tmux new -s Neith -d
     while [[ true ]]; do
         if [ -f "scan" ]; then
-        tmux send-keys -t Seith "python3 mOnVulns.py -s exploit-db -nf scan -l 2 -w ${1}_mOn" C-m
+        tmux send-keys -t Neith "python3 functions/index.py -s exploit-db -nf scan -l 2 -w ${1}_mOn" C-m
 
         tmux split-window -h
         tmux resize-pane -R 10
-        tmux send-keys -t Seith 'python3 monfile.py' C-m
+        tmux send-keys -t Neith 'python3 functions/monvirus.py' C-m
 
         tmux split-window -v
-        tmux send-keys -t Seith 'python3 moncon.py' C-m
+        tmux send-keys -t Neith 'python3 functions/monconnections.py' C-m
 
-        tmux attach -t Seith
+        tmux attach -t Neith
         break 
         
         else

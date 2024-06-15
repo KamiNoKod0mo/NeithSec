@@ -1,0 +1,17 @@
+[
+    {
+        "tmp/malware.cpp": "ec2897df3591be8be07ad24b54878876"
+    },
+    {
+        "tmp/arquivo_normal": "cd93fefac68e2637e5a4542eb3e0528f"
+    },
+    {
+        "tmp/backdoor.exe": "1df4c2d7c669ab444e98413a4d667669"
+    },
+    {
+        "tmp/nomes": "6f824a1d6927fa3c898b686906b429a2"
+    },
+    {
+        "tmp/numeros": "f62fd2551c15233beab104b5cb18e181"
+    }
+]
