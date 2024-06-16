@@ -52,9 +52,14 @@ pip install -r install-setup/requirement.txt
 ```
 
 ## Uso
+Linux terminal
 ```bash
 chmod +x start.sh
 ./start.sh ip
+```
+windows cmd
+```bash
+./startW.bat ip
 ```
 ![Screenshot from 2024-06-15 12-13-30](https://github.com/KamiNoKod0mo/NeithSec/assets/149252909/93f1ca93-3ee2-4b3c-b190-4affd04d6af1)
 
