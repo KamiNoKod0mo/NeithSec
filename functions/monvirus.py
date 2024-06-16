@@ -2,9 +2,9 @@
 # Gera um hash md5 para monitorar a modifição de arquivos sanlvos em files_hash_virus.json
 # Envia esse arquivos para  a API do virus total
 # Mostrando a resposta em verder ou vermelho
-import requests, paramiko, os
+import requests, paramiko, os, platform
 from colorama import init,Fore,Style
-import hashlib, json
+import hashlib, json, time
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -30,18 +30,39 @@ def connect(ip,port,user,password,up=0):
         # Criar um objeto SFTP
         sftp = client.open_sftp()
 
-        for num in range(len(dirs)):
-            stdin, stdout, stderr = client.exec_command(f'find {dirs[num]} -maxdepth 1 -type f')
-            # Baixar o arquivo do servidor
-            
-            # Ler e imprimir a saída do comando
-            arquivos.append(((stdout.read().decode()).strip("[]\n").split("\n")))
-        
+        stdin, stdout, stderr = client.exec_command(f'uname -s')
+        saida = stdout.read().decode().strip()
+
+        if saida == 'Linux':
+
+            for num in range(len(dirs)):
+                stdin, stdout, stderr = client.exec_command(f'find {dirs[num]} -maxdepth 1 -type f')
+                # Baixar o arquivo do servidor
+                
+                # Ler e imprimir a saída do comando
+                arquivos.append(((stdout.read().decode()).strip("[]\n").split("\n")))
+        else:
+            stdin, stdout, stderr = client.exec_command(f'ver')
+            saida = stdout.read().decode().strip()
+            if 'Windows' in saida:
+                for num in range(len(dirs)):
+                    arquivosW = []
+                    stdin, stdout, stderr = client.exec_command(f'dir /b {dirs[num]}')
+                    # Baixar o arquivo do servidor
+                
+                    # Ler e imprimir a saída do comando
+                    wi = (((stdout.read().decode().replace('\r','')).strip("[]\n").split("\n")))
+
+                    for x in wi:
+                        arquivosW.append(f'{dirs[num]}/{x}')
+                    arquivos.append(arquivosW)
+                    
         for x in range(len(dirs)):
             for arqs in range(len(arquivos[x])):
                 nome_arquivo = os.path.basename(arquivos[x][arqs])
                 #print(nome_arquivo)
                 destino = os.path.join('tmp', nome_arquivo)
+                
                 sftp.get(arquivos[x][arqs], destino)
     finally:
         # Fechar a conexão
@@ -143,11 +164,16 @@ def save_json(resultados, arquivo_json):
 
 
 try:
-    os.system('clear')
-    save_json(None,'files_hash_virus.json')
-    while True:
-        arquivo=(connect('127.0.0.1','22',f'{user}',f'{passw}'))
+    if platform.system() == 'Linux':
+        os.system('clear')  
+    elif platform.system() == 'Windows':
+        os.system('cls')
 
+    save_json(None,'files_hash_virus.json')
+
+    while True:
+        #arquivo=(connect('127.0.0.1','22',f'{user}',f'{passw}'))
+        arquivo=(connect('54.144.195.224','22','Administrator','B1!vrLyY@MoI@CIlRUFhTcR63-CD1ItU'))
         new_file = []
         new_files = []
         id = []
@@ -197,7 +223,10 @@ try:
         #####
         
         if len(id) >= 1 and p < len(id):
-            os.system('clear')
+            if platform.system() == 'Linux':
+                os.system('clear')  
+            elif platform.system() == 'Windows':
+                os.system('cls')
             #print(id)
             i = 0
             for x in range(len(dirs)):
@@ -206,10 +235,19 @@ try:
                     #print(id[i])         
                     infos(id[i],new_files[i])
                     i = i + 1
-            os.system('rm -fr tmp/*') 
+
+            if platform.system() == 'Linux':
+                os.system('rm -fr tmp/*')  
+            elif platform.system() == 'Windows':
+                os.system('del tmp/*.*') 
               
 except KeyboardInterrupt:
     pass
 finally:
-    os.system('rm -fr tmp/*')
+    
+    if platform.system() == 'Linux':
+        os.system('rm -fr tmp/*')  
+    elif platform.system() == 'Windows':
+        os.system('del tmp/*.*')
+
     save_json(None,'files_hash_virus.json')

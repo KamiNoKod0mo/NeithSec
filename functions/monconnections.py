@@ -4,7 +4,7 @@
 import paramiko, os, time
 from colorama import init,Fore,Style
 from dotenv import load_dotenv
-import os
+import os, platform
 
 
 load_dotenv()
@@ -22,11 +22,33 @@ try:
 
     client.connect('127.0.0.1','22',f'{user}',f'{passw}')
 
-    while True:
-        os.system('clear')
-        stdin, stdout, stderr = client.exec_command(f'netstat -vlpt')
-        print(stdout.read().decode())
-        time.sleep(20)
+    stdin, stdout, stderr = client.exec_command(f'uname -s')
+    saida = stdout.read().decode().strip()
+
+    if saida == 'Linux':
+        while True:
+            if platform.system() == 'Linux':
+                os.system('clear')  
+            elif platform.system() == 'Windows':
+                os.system('cls')
+
+            stdin, stdout, stderr = client.exec_command(f'netstat -vlpt')
+            print(stdout.read().decode())
+            time.sleep(20)
+    else:
+        stdin, stdout, stderr = client.exec_command(f'ver')
+        saida = stdout.read().decode().strip()
+        if 'Windows' in saida:
+            while True:
+                if platform.system() == 'Linux':
+                    os.system('clear')  
+                elif platform.system() == 'Windows':
+                    os.system('cls')
+
+                stdin, stdout, stderr = client.exec_command(f'netstat -anr')
+                print(stdout.read().decode())
+                time.sleep(20)
+                
 except KeyboardInterrupt:
     client.close()
 

@@ -123,7 +123,11 @@ def main (respostas):
 if args.nf:
     while True:
     
-        os.system('clear')
+        if platform.system() == 'Linux':
+            os.system('clear')  
+        elif platform.system() == 'Windows':
+            os.system('cls')
+
         init(autoreset=True)
         banner = pyfiglet.figlet_format('              Neith', font='slant')
         print(f"{Fore.BLUE} {banner}", end='')
@@ -150,8 +154,13 @@ if args.nf:
             pdf_files_fi = list(set([pdf for pdf in pdf_files if pdf is not None])) #Voltar variavel inicial
             
             #apaga pdf temporarios
-            for item in pdf_files_fi:
-                os.system(f'rm {item}')
+            if platform.system() == 'Linux':
+                for item in pdf_files_fi:
+                    os.system(f'rm {item}')
+            elif platform.system() == 'Windows':
+                for item in pdf_files_fi:
+                    os.system(f'del {item}')
+            
             
             #limpar variaveis de pdf
             pdf_files = []
