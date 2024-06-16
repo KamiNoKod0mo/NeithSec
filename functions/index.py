@@ -131,7 +131,7 @@ if args.nf:
         init(autoreset=True)
         banner = pyfiglet.figlet_format('              Neith', font='slant')
         print(f"{Fore.BLUE} {banner}", end='')
-        print(f"{Fore.BLUE} \t\t    Made by: Neith Security             Version: 2.0{Style.RESET_ALL}\n", end='')
+        print(f"{Fore.BLUE} \t\t    Made by: Neith Security             Version: 2.5{Style.RESET_ALL}\n", end='')
         
         resposta = None
         if args.s == "exploit-db":
